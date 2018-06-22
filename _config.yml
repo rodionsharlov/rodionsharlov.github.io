@@ -1,2 +1,3 @@
 name: Rodion Sharlov, an international student
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
