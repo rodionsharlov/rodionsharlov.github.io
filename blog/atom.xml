@@ -1,0 +1,27 @@
+---
+layout: feed
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title>Rodion Sharlov's Blog</title>
+	<link href="http://rodionsharlov.github.io/blog/atom.xml" rel="self"/>
+	<link href="http://rodionsharlov.github.io/blog"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>http://rodionsharlov.github.io/blog</id>
+	<author>
+		<name>Rodion Sharlov</name>
+		<email>rodionsharlov@gmail.com</email>
+	</author>
+
+	{% for post in site.posts %}
+		<entry>
+			<title>{{ post.title }}</title>
+			<link href="http://rodionsharlov.github.io{{ post.url }}"/>
+			<updated>{{ post.date | date_to_xmlschema }}</updated>
+			<id>http://rodionsharlov.github.io{{ post.id }}</id>
+			<content type="html">{{ post.content | xml_escape }}</content>
+		</entry>
+	{% endfor %}
+
+</feed>
